@@ -9,7 +9,7 @@ setInterval(updateTime, 1000);
 // Create a function to compare hour block with current hour
 
 function checkHour() {
-    const currentHour = moment().hours();
+    const currentHour = 11
         // Read the hourBlock hour in the HTML 
         $(".time-block").each(function() {
             const hourBlock = parseInt(
@@ -49,9 +49,19 @@ checkHour();
             localStorage.setItem(hour, userInput);
             console.log(localStorage)
     });
+    // Load saved data
+
+    $('#hourBlock-9 .description').val(localStorage.getItem('hourBlock-9'));
+    $('#hourBlock-10 .description').val(localStorage.getItem('hourBlock-10'));
+    $('#hourBlock-11 .description').val(localStorage.getItem('hourBlock-11'));
+    $('#hourBlock-12 .description').val(localStorage.getItem('hourBlock-12'));
+    $('#hourBlock-13 .description').val(localStorage.getItem('hourBlock-13'));
+    $('#hourBlock-14 .description').val(localStorage.getItem('hourBlock-14'));
+    $('#hourBlock-15 .description').val(localStorage.getItem('hourBlock-15'));
+    $('#hourBlock-16 .description').val(localStorage.getItem('hourBlock-16'));
+    $('#hourBlock-17 .description').val(localStorage.getItem('hourBlock-17'));
  });
 
-// Load saved data
 
 
 
