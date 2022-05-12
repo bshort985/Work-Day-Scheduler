@@ -13,38 +13,37 @@ setInterval(updateTime, 1000);
 
 // Create function to 
 
+// moment().hours();
 
 
-
-// Create a function to add the different colors
+// Create a function to compare hour block with current hour
 
 function checkHour() {
-    const currentHour = moment().hours();
-    // Read the hourBlock hour in the HTML 
-    $(".time-block").each(function() {
-        const hourBlock = parsInt(
-            $(this) 
-            .attr("id")
-            .split("-")[1],
-            
-        );
-       
-
+    const currentHour = 14
+        // Read the hourBlock hour in the HTML 
+        $(".time-block").each(function() {
+            const hourBlock = parseInt(
+                $(this) 
+                .attr("id")
+                .split("-")[1]
+            );
+        if (currentHour > hourBlock ) {
+            $(this).addClass("past")
+        } else if (currentHour === hourBlock) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        } else if (currentHour < hourBlock){
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
     });
-    // if (hour > hourBlock ) {
-    //     .addClass("past";)
-    // } else if (hour === hourBlock) {
-    //     .removeClass("past");
-    //     .removeClass("future");
-    //     .addClass("present");
-    // } else if (hour < hourBlock){
-    //     .removeClass("past");
-    //     .removeClass("present");
-    //     .addClass("future");
-    // }
+   
 };
 
 
 checkHour();
+
 
 
