@@ -9,7 +9,7 @@ setInterval(updateTime, 1000);
 // Create a function to compare hour block with current hour
 
 function checkHour() {
-    const currentHour = 11
+    const currentHour = moment().hours()
         // Read the hourBlock hour in the HTML 
         $(".time-block").each(function() {
             const hourBlock = parseInt(
