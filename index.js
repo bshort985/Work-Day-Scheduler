@@ -1,8 +1,3 @@
-
-
-
-
-
 // Add currenmt date and time and keep time without refeshing the browser
 
 var updateTime = function() {
@@ -11,15 +6,10 @@ var updateTime = function() {
 }
 setInterval(updateTime, 1000);
 
-// Create function to 
-
-// moment().hours();
-
-
 // Create a function to compare hour block with current hour
 
 function checkHour() {
-    const currentHour = 14
+    const currentHour = moment().hours();
         // Read the hourBlock hour in the HTML 
         $(".time-block").each(function() {
             const hourBlock = parseInt(
@@ -44,6 +34,25 @@ function checkHour() {
 
 
 checkHour();
+
+// Create locale storage function
+    $(document).ready(function() {
+        $(".saveBtn").on("click", function() {
+            const userInput = $(this)
+            .siblings(".description")
+            .val();
+            console.log(userInput);
+            const hour = $(this)
+            .parent()
+            .attr("id")
+            console.log(hour);
+            localStorage.setItem(hour, userInput);
+            console.log(localStorage)
+    });
+ });
+
+// Load saved data
+
 
 
 
