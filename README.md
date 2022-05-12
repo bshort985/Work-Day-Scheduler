@@ -20,6 +20,6 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 
-Deployed URL: 
+Deployed URL: https://bshort985.github.io/Work-Day-Scheduler/
 
 ![image](https://user-images.githubusercontent.com/97572888/167992507-c3efd472-1628-4ad7-a872-f50ca4c751b8.png)
